@@ -3,3 +3,18 @@ $color: steelblue;
 .my-flix{
     color:$color
 }
+
+@media (min-width: 1200px){
+div.container {
+    max-width: 1440px;
+}
+}
+
+.nav-link a{
+    color:rgba(255,255,255,.75) !important;
+}
+
+
+.director-view img{
+    width: 20% !important;
+}

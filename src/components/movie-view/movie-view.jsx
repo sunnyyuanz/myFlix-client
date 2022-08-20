@@ -2,35 +2,40 @@ import React from 'react';
 import PropType from 'prop-types';
 import { Button, Card } from 'react-bootstrap';
 
+import { Link } from 'react-router-dom';
+
 export class MovieView extends React.Component {
   render() {
-    const { movie, onBackClick } = this.props;
-    let url = 'images/' + movie.ImagePath;
+    const { movie, onBackClick, AddToFav, FavoriteMovies } = this.props;
+    let url = '../images/' + movie.ImagePath;
 
     console.log(typeof movie);
     console.log(typeof onBackClick);
 
     return (
       <Card className="movie-view">
+        <Card.Img variant="top" src={url} />
         <Card.Body>
           <Card.Title>{movie.Title}</Card.Title>
-          <Card.Img src={url}></Card.Img>
           <Card.Text className="movie-view-Genre">
-            Genre: {movie.Genre.Name}
+            Genre:
+            <Link to={`/genres/${movie.Genre.Name}`}>
+              <Button variant="link">{movie.Genre.Name}</Button>
+            </Link>
           </Card.Text>
           <Card.Text className="movie-view-Director">
-            Director: {movie.Director.Name}
+            Director:
+            <Link to={`/directors/${movie.Director.Name}`}>
+              <Button variant="link">{movie.Director.Name}</Button>
+            </Link>
           </Card.Text>
           <Card.Text className="movie-view-info">
             Description: {movie.Description}
           </Card.Text>
-          <Button
-            onClick={() => {
-              onBackClick(null);
-            }}
-          >
-            Back
+          <Button onClick={() => AddToFav(movie, FavoriteMovies)}>
+            Favorite
           </Button>
+          <Button onClick={() => onBackClick()}>Back</Button>
         </Card.Body>
       </Card>
     );
@@ -41,7 +46,6 @@ MovieView.proptype = {
   movie: PropType.shape({
     Title: PropType.string.isRequired,
     Description: PropType.string.isRequired,
-    ImagePath: PropType.string.isRequired,
     Genre: PropType.shape({
       Name: PropType.string.isRequired,
     }),

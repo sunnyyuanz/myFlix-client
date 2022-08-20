@@ -1,0 +1,1 @@
+{"mappings":"AAAA;EACI;;ACCJ;EACI,OAHI","sources":["src/components/login-view/login-view.scss","src/index.scss"],"sourcesContent":[".card{\r\n    margin-top: 50px;\r\n}","$color: steelblue;\r\n\r\n.my-flix{\r\n    color:$color\r\n}"],"names":[],"version":3,"file":"index.1d334ea1.css.map","sourceRoot":"/__parcel_source_root/"}
