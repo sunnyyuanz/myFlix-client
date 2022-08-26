@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 
 export class MovieView extends React.Component {
   render() {
-    const { movie, onBackClick, AddToFav, FavoriteMovies } = this.props;
+    const { movie, onBackClick, AddToFav, FavoriteMovies, RemoveFromFav } =
+      this.props;
     let url = '../images/' + movie.ImagePath;
 
     console.log(typeof movie);
@@ -32,9 +33,13 @@ export class MovieView extends React.Component {
           <Card.Text className="movie-view-info">
             Description: {movie.Description}
           </Card.Text>
-          <Button onClick={() => AddToFav(movie, FavoriteMovies)}>
-            Favorite
-          </Button>
+          {FavoriteMovies.includes(movie._id) ? (
+            <Button onClick={() => RemoveFromFav(movie, FavoriteMovies)}>
+              Unlike
+            </Button>
+          ) : (
+            <Button onClick={() => AddToFav(movie, FavoriteMovies)}>♥</Button>
+          )}
           <Button onClick={() => onBackClick()}>Back</Button>
         </Card.Body>
       </Card>

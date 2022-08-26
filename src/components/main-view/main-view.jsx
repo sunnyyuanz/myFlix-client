@@ -16,6 +16,8 @@ import { UpdateView } from '../profile-view/updateView';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
 
+import './main-view.scss';
+
 export class MainView extends React.Component {
   constructor() {
     super();
@@ -95,8 +97,9 @@ export class MainView extends React.Component {
         )
         .then((response) => {
           const data = response.data;
-          console.log(data);
-          alert('Removed');
+          this.setState({
+            FavoriteMovies: data.FavoriteMovies,
+          });
         })
         .catch((response) => {
           const data = response.data;
@@ -176,10 +179,10 @@ export class MainView extends React.Component {
       /*If the state of 'selectedMovie' is not null, that selected movie will be returned otherwise, all *movies will be returned*/
       <Router className="main-view">
         <MenuBar user={user} />
-        <p>
+        <div className="auth">
           Signed in as <Link to={`/users/${user}`}>{user}</Link>
-        </p>
-        <Row className="justify-content-md-center">
+        </div>
+        <Row className="justify-content-md-center m-5">
           <Route
             exact
             path="/"
@@ -231,6 +234,9 @@ export class MainView extends React.Component {
                     onBackClick={() => history.goBack()}
                     AddToFav={(movie, FavoriteMovies) =>
                       this.AddToFav(movie, FavoriteMovies)
+                    }
+                    RemoveFromFav={(movie, FavoriteMovies) =>
+                      this.RemoveFromFav(movie, FavoriteMovies)
                     }
                     FavoriteMovies={FavoriteMovies}
                   />

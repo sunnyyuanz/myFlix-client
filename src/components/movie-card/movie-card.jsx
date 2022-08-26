@@ -11,21 +11,23 @@ export class MovieCard extends React.Component {
     let url = 'images/' + movie.ImagePath;
 
     return (
-      <Card>
+      <Card className='movieCard'>
         <Card.Img variant="top" src={url} />
         <Card.Body>
           <Card.Title>{movie.Title}</Card.Title>
-          <Card.Text>{movie.Description}</Card.Text>
+          <Card.Text className="wordCountLimited">
+            {movie.Description}
+          </Card.Text>
           <Link to={`/movies/${movie._id}`}>
             <Button variant="link">Open</Button>
           </Link>
-          {FavoriteMovies.includes(movie._id)?(
-            <Button onClick={() => RemoveFromFav(movie, FavoriteMovies)}>Unlike</Button>
-
-          ):(
+          {FavoriteMovies.includes(movie._id) ? (
+            <Button onClick={() => RemoveFromFav(movie, FavoriteMovies)}>
+              Unlike
+            </Button>
+          ) : (
             <Button onClick={() => AddToFav(movie, FavoriteMovies)}>♥</Button>
           )}
-          
         </Card.Body>
       </Card>
     );

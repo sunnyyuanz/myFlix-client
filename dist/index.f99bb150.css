@@ -1,0 +1,55 @@
+.nav-link a {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.main-nav {
+  background-color: black !important;
+}
+
+.navbar-brand {
+  padding: 0.5rem !important;
+  background-color: #fcba03;
+  align-self: center;
+  margin-bottom: 0.3rem;
+  border-radius: 5px;
+  color: black !important;
+  font-weight: 800;
+}
+.auth {
+  color: white;
+}
+.my-flix {
+  color: steelblue;
+}
+
+div.container {
+  max-width: 100%;
+}
+
+.director-view img {
+  width: 20% !important;
+}
+
+div.container {
+  padding: 0;
+  background-color: #343a40;
+}
+
+.wordCountLimited {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.movieCard {
+  margin-bottom: 20px;
+  height: 744px;
+}
+
+.auth {
+  color: white;
+}
+/*# sourceMappingURL=index.f99bb150.css.map */
