@@ -203,16 +203,19 @@ class MainView extends React.Component {
                   <Row className="searchbar-Section">
                     <VisibilityFilterInput />
                   </Row>
-                  <MovieList
-                    movies={movies}
-                    FavoriteMovies={FavoriteMovies}
-                    AddToFav={(movie, FavoriteMovies) =>
-                      this.AddToFav(movie, FavoriteMovies)
-                    }
-                    RemoveFromFav={(movie, FavoriteMovies) =>
-                      this.RemoveFromFav(movie, FavoriteMovies)
-                    }
-                  />
+
+                  <Row>
+                    <MovieList
+                      movies={movies}
+                      FavoriteMovies={FavoriteMovies}
+                      AddToFav={(movie, FavoriteMovies) =>
+                        this.AddToFav(movie, FavoriteMovies)
+                      }
+                      RemoveFromFav={(movie, FavoriteMovies) =>
+                        this.RemoveFromFav(movie, FavoriteMovies)
+                      }
+                    />
+                  </Row>
                 </>
               );
             }}
