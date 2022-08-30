@@ -8,17 +8,18 @@
 }
 
 .searchbar{
-    width: 45% !important;
+    margin-left: 65px;
+    margin-bottom: 20px;
+}
+
+.Main-Content{
+    margin-top: 0px !important;
 }
 
 @media all and (min-width: 900px) {
 .searchbar-Section{
     justify-content: flex-end;
     margin-right: 60px!important;
-}
-
-.searchbar{
-    width: 25% !important;
 }
 
 }

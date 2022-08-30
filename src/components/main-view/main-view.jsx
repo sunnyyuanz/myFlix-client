@@ -200,11 +200,11 @@ class MainView extends React.Component {
               if (movies.length === 0) return <div className="main-view" />;
               return (
                 <>
-                  <Row className="searchbar-Section">
+                  <div className="searchbar-Section">
                     <VisibilityFilterInput />
-                  </Row>
+                  </div>
 
-                  <Row>
+                  <Row className="MovieListRow">
                     <MovieList
                       movies={movies}
                       FavoriteMovies={FavoriteMovies}
