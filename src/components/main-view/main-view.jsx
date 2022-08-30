@@ -184,9 +184,6 @@ class MainView extends React.Component {
         <div className="auth">
           Signed in as <Link to={`/users/${user}`}>{user}</Link>
         </div>
-        <Row className='searchbar-Section'>
-            <VisibilityFilterInput />
-        </Row>
         <Row className="justify-content-md-center m-5 Main-Content">
           <Route
             exact
@@ -202,16 +199,21 @@ class MainView extends React.Component {
               //before the movies have been loaded
               if (movies.length === 0) return <div className="main-view" />;
               return (
-                <MovieList
-                  movies={movies}
-                  FavoriteMovies={FavoriteMovies}
-                  AddToFav={(movie, FavoriteMovies) =>
-                    this.AddToFav(movie, FavoriteMovies)
-                  }
-                  RemoveFromFav={(movie, FavoriteMovies) =>
-                    this.RemoveFromFav(movie, FavoriteMovies)
-                  }
-                />
+                <>
+                  <Row className="searchbar-Section">
+                    <VisibilityFilterInput />
+                  </Row>
+                  <MovieList
+                    movies={movies}
+                    FavoriteMovies={FavoriteMovies}
+                    AddToFav={(movie, FavoriteMovies) =>
+                      this.AddToFav(movie, FavoriteMovies)
+                    }
+                    RemoveFromFav={(movie, FavoriteMovies) =>
+                      this.RemoveFromFav(movie, FavoriteMovies)
+                    }
+                  />
+                </>
               );
             }}
           />
