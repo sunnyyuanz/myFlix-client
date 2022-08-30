@@ -1,3 +1,24 @@
 .auth{
-    color:white
+    color:rgba(255, 255, 255, 0.75) !important
+}
+
+.searchbar-Section{
+    justify-content: center;
+    margin-top: 10px !important;
+}
+
+.searchbar{
+    width: 45% !important;
+}
+
+@media all and (min-width: 900px) {
+.searchbar-Section{
+    justify-content: flex-end;
+    margin-right: 60px!important;
+}
+
+.searchbar{
+    width: 25% !important;
+}
+
 }

@@ -13,6 +13,7 @@ import {
 import { FavoriteCard } from './FavoriteCard';
 import axios from 'axios';
 import { UpdateView } from './updateView';
+import './profile-view.scss';
 
 export class ProfileView extends React.Component {
   render() {
@@ -32,12 +33,9 @@ export class ProfileView extends React.Component {
       let user = localStorage.getItem('user');
 
       axios
-        .delete(
-          `https://szmyflix.herokuapp.com/users/${userInfo.Username}`,
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        )
+        .delete(`https://szmyflix.herokuapp.com/users/${userInfo.Username}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
         .then((response) => {
           alert('Your account is deregistered!');
           localStorage.removeItem('user');
@@ -102,7 +100,7 @@ export class ProfileView extends React.Component {
             </CardGroup>
           </Col>
         </Row>
-        <Card.Title>Favorite Movies</Card.Title>
+        <Card.Title className="favMovie">Favorite Movies:</Card.Title>
         {FavoriteMovies.length !== 0 ? (
           <Row className="justify-content-md-center">
             {FavoriteMovies.map((movieId) => {

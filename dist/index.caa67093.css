@@ -1,49 +1,42 @@
+html, body {
+  background-color: #343a40 !important;
+  height: 100%;
+}
+
 .my-flix {
   color: steelblue;
 }
 
-@media (min-width: 1200px) {
-  div.container {
-    max-width: 1440px;
-  }
-}
-.nav-link a {
-  color: rgba(255, 255, 255, 0.75) !important;
+div.container {
+  max-width: 100%;
+  padding: 0;
+  background-color: #343a40;
 }
 
 .director-view img {
   width: 20% !important;
 }
 
-.navbar-brand {
-  padding: 0.5rem !important;
-  background-color: #fcba03;
-  align-self: center;
-  margin-bottom: 0.3rem;
-  border-radius: 5px;
-  color: black !important;
-  font-weight: 800;
-}
-
-div.container {
-  padding: 0;
-  background-color: #343a40;
-}
-
-.main-nav {
-  background-color: black !important;
-}
-
 .wordCountLimited {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  line-clamp: 4;
-  -webkit-line-clamp: 4;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
 .movieCard {
   margin-bottom: 20px;
+}
+
+.auth {
+  color: white;
+}
+
+@media all and (min-width: 900px) {
+  .movieCard {
+    height: 750px;
+  }
 }
 /*# sourceMappingURL=index.caa67093.css.map */

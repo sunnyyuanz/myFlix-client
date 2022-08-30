@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropType, { element } from 'prop-types';
 import { Link } from 'react-router-dom';
 import {
@@ -13,12 +13,9 @@ import {
 import axios from 'axios';
 import { UpdateView } from './updateView';
 
-export function UpdateView(props) {
-  const userInfo = props.userInfo;
-
+export function UpdateView({ userInfo, onBackClick }) {
   //   console.log('This is UpdateView');
   //   console.log(userInfo);
-
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -195,7 +192,7 @@ export function UpdateView(props) {
         <Button variant="primary" className="mt-3" onClick={onSubmitClick}>
           Submit
         </Button>
-        <Button onClick={() => props.onBackClick()} className="back mt-3">
+        <Button onClick={() => onBackClick()} className="back mt-3">
           Back
         </Button>
       </Row>

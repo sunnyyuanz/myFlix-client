@@ -1,0 +1,104 @@
+@media all and (min-width: 900px) {
+  .movie-img {
+    height: 510px !important;
+  }
+}
+.movieView-img {
+  width: 40% !important;
+}
+
+.movie-view {
+  flex-direction: row !important;
+}
+
+.cardContent {
+  height: 80%;
+}
+
+.movieView-buttons {
+  justify-content: flex-end;
+}
+
+.btn {
+  margin: 5px;
+}
+
+span {
+  font-weight: 500;
+}
+
+.card-body {
+  padding: 3.25rem;
+}
+.nav-link a {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.main-nav {
+  background-color: black !important;
+}
+
+.navbar-brand {
+  padding: 0.5rem !important;
+  background-color: #fcba03;
+  align-self: center;
+  margin-bottom: 0.3rem;
+  border-radius: 5px;
+  color: black !important;
+  font-weight: 800;
+}
+.favMovie {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.deregister {
+  width: 10%;
+  align-self: end;
+  background-color: #c4c0c0 !important;
+  border-color: transparent !important;
+}
+.auth {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+html, body {
+  background-color: #343a40 !important;
+  height: 100%;
+}
+
+.my-flix {
+  color: steelblue;
+}
+
+div.container {
+  max-width: 100%;
+  padding: 0;
+  background-color: #343a40;
+}
+
+.director-view img {
+  width: 20% !important;
+}
+
+.wordCountLimited {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.movieCard {
+  margin-bottom: 20px;
+}
+
+.auth {
+  color: white;
+}
+
+@media all and (min-width: 900px) {
+  .movieCard {
+    height: 750px;
+  }
+}
+/*# sourceMappingURL=index.3f764291.css.map */

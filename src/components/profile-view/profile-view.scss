@@ -1,0 +1,24 @@
+.favMovie{
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.deregister{
+    width: 10%;
+    align-self: end;
+    background-color: #c4c0c0 !important;
+    border-color: transparent !important;
+}
+
+.FavMovie-Card{
+    border:1px solid rgba(143, 143, 143, 0.75)  !important;
+    background-color: transparent !important;
+}
+
+.FavMovie-CardTitle{
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.FavMovie-Card:hover{
+    transform: scale(1.05);
+    background-color: #343a40 !important;
+}

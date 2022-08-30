@@ -1,5 +1,10 @@
 $color: steelblue;
 
+html,body{
+    background-color: #343a40 !important;
+    height: 100%;
+}
+
 .my-flix{
     color:$color
 }
@@ -7,31 +12,34 @@ $color: steelblue;
 
 div.container {
     max-width: 100%;
+    padding:0;
+    background-color: #343a40;
 }
 
 .director-view img{
     width: 20% !important;
 }
 
-div.container{
-    padding:0;
-    background-color: #343a40;
-}
-
 .wordCountLimited{
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    line-clamp: 3;
-    -webkit-line-clamp: 3;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
 
 .movieCard{
     margin-bottom: 20px;
-    height: 744px;
+    background-color: transparent !important;
 }
 
 .auth{
     color: white;
+}
+
+@media all and (min-width: 900px) {
+    .movieCard{
+        min-height: 650px;
+    }
 }

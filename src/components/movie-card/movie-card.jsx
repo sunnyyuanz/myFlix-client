@@ -5,31 +5,35 @@ import Card from 'react-bootstrap/Card';
 
 import { Link } from 'react-router-dom';
 
+import './movie-card.scss';
+import { Row } from 'react-bootstrap';
+
 export class MovieCard extends React.Component {
   render() {
     const { movie, AddToFav, FavoriteMovies, RemoveFromFav } = this.props;
     let url = 'images/' + movie.ImagePath;
 
     return (
-      <Card className='movieCard'>
-        <Card.Img variant="top" src={url} />
-        <Card.Body>
-          <Card.Title>{movie.Title}</Card.Title>
-          <Card.Text className="wordCountLimited">
-            {movie.Description}
-          </Card.Text>
-          <Link to={`/movies/${movie._id}`}>
-            <Button variant="link">Open</Button>
-          </Link>
-          {FavoriteMovies.includes(movie._id) ? (
-            <Button onClick={() => RemoveFromFav(movie, FavoriteMovies)}>
-              Unlike
-            </Button>
-          ) : (
-            <Button onClick={() => AddToFav(movie, FavoriteMovies)}>♥</Button>
-          )}
-        </Card.Body>
-      </Card>
+      <Link to={`/movies/${movie._id}`}>
+        <Card className="movieCard">
+          <Card.Img variant="top" src={url} className="movies-img" />
+          <Card.Body className="movieCard-content">
+            <Card.Title className='moviecard-title'>{movie.Title}</Card.Title>
+            <Card.Text className="wordCountLimited">
+              {movie.Description}
+            </Card.Text>
+          </Card.Body>
+          <Row className="m-2 buttons">
+            {FavoriteMovies.includes(movie._id) ? (
+              <Button onClick={() => RemoveFromFav(movie, FavoriteMovies)}>
+                Unlike
+              </Button>
+            ) : (
+              <Button onClick={() => AddToFav(movie, FavoriteMovies)}>♥</Button>
+            )}
+          </Row>
+        </Card>
+      </Link>
     );
   }
 }

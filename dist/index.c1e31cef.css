@@ -1,0 +1,163 @@
+.movieView-img {
+  width: 40% !important;
+}
+
+.movie-view {
+  flex-direction: row !important;
+}
+
+.cardContent {
+  height: 80%;
+}
+
+.movieView-buttons {
+  justify-content: flex-end;
+}
+
+.btn {
+  margin: 5px;
+}
+
+span {
+  font-weight: 500;
+}
+
+.card-body {
+  padding: 3.25rem;
+}
+.nav-link a {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.main-nav {
+  background-color: black !important;
+}
+
+.navbar-brand {
+  padding: 0.5rem !important;
+  background-color: #fcba03;
+  align-self: center;
+  margin-bottom: 0.3rem;
+  border-radius: 5px;
+  color: black !important;
+  font-weight: 800;
+}
+.favMovie {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.deregister {
+  width: 10%;
+  align-self: end;
+  background-color: #c4c0c0 !important;
+  border-color: transparent !important;
+}
+
+.FavMovie-Card {
+  border: 1px solid rgba(143, 143, 143, 0.75) !important;
+  background-color: transparent !important;
+}
+
+.FavMovie-CardTitle {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.FavMovie-Card:hover {
+  transform: scale(1.05);
+  background-color: #343a40 !important;
+}
+.auth {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.searchbar-Section {
+  justify-content: center;
+  margin-top: 10px !important;
+}
+
+.searchbar {
+  width: 45% !important;
+}
+
+@media all and (min-width: 900px) {
+  .searchbar-Section {
+    justify-content: flex-end;
+    margin-right: 60px !important;
+  }
+  .searchbar {
+    width: 25% !important;
+  }
+}
+.moviecard-title {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.movieCard-content {
+  padding: 20px 10px 0 10px !important;
+}
+
+.wordCountLimited {
+  color: rgba(201, 201, 201, 0.75) !important;
+}
+
+.buttons {
+  justify-content: flex-end;
+}
+
+.movieCard {
+  border: 1px solid rgba(143, 143, 143, 0.75) !important;
+}
+
+.movieCard:hover {
+  transform: scale(1.05);
+  background-color: #343a40 !important;
+}
+
+.movies-img {
+  width: 88% !important;
+  align-self: center;
+}
+
+html, body {
+  background-color: #343a40 !important;
+  height: 100%;
+}
+
+.my-flix {
+  color: steelblue;
+}
+
+div.container {
+  max-width: 100%;
+  padding: 0;
+  background-color: #343a40;
+}
+
+.director-view img {
+  width: 20% !important;
+}
+
+.wordCountLimited {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.movieCard {
+  margin-bottom: 20px;
+  background-color: transparent !important;
+}
+
+.auth {
+  color: white;
+}
+
+@media all and (min-width: 900px) {
+  .movieCard {
+    min-height: 650px;
+  }
+}
+/*# sourceMappingURL=index.c1e31cef.css.map */

@@ -1,0 +1,30 @@
+.moviecard-title{
+    color:rgba(255,255,255,.75) !important;
+}
+
+
+.movieCard-content{
+    padding: 20px 10px 0 10px !important;
+}
+
+.wordCountLimited{
+    color:rgba(201, 201, 201, 0.75) !important;
+}
+
+.buttons{
+    justify-content: flex-end;
+}
+
+.movieCard{
+    border:1px solid rgba(143, 143, 143, 0.75)  !important;
+}
+
+.movieCard:hover{
+    transform: scale(1.05);
+    background-color: #343a40 !important;
+}
+
+.movies-img{
+    width: 88% !important;
+    align-self: center;
+}

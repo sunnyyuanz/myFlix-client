@@ -2,11 +2,16 @@ import React from 'react';
 import axios from 'axios';
 import PropType from 'prop-types';
 
+import { connect } from 'react-redux';
+
 import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Row, Col, Container, Button } from 'react-bootstrap';
 
-import { MovieCard } from '../movie-card/movie-card';
+import { setMovies } from '../../actions/action';
+
+import MovieList from '../movies-list/movies-list';
+
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
@@ -15,15 +20,14 @@ import { ProfileView } from '../profile-view/profile-view';
 import { UpdateView } from '../profile-view/updateView';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
+import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input.jsx/visibility-filter-input';
 
 import './main-view.scss';
 
-export class MainView extends React.Component {
+class MainView extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies: [],
-      selectedMovie: null,
       user: null,
       userInfo: null,
       FavoriteMovies: [],
@@ -55,9 +59,7 @@ export class MainView extends React.Component {
       })
       .then((response) => {
         //Assign the result to the state
-        this.setState({
-          movies: response.data,
-        });
+        this.props.setMovies(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -167,8 +169,8 @@ export class MainView extends React.Component {
   }
 
   render() {
-    const { movies, selectedMovie, user, userInfo, FavoriteMovies } =
-      this.state;
+    const { user, userInfo, FavoriteMovies } = this.state;
+    const { movies, visibilityFilter } = this.props;
 
     console.log(userInfo, FavoriteMovies);
     //if there is no user, the loginView is rendered. If there is a user logged in, the user details are *passed a a prop to the LoginView
@@ -182,7 +184,10 @@ export class MainView extends React.Component {
         <div className="auth">
           Signed in as <Link to={`/users/${user}`}>{user}</Link>
         </div>
-        <Row className="justify-content-md-center m-5">
+        <Row className='searchbar-Section'>
+            <VisibilityFilterInput />
+        </Row>
+        <Row className="justify-content-md-center m-5 Main-Content">
           <Route
             exact
             path="/"
@@ -196,20 +201,18 @@ export class MainView extends React.Component {
                 );
               //before the movies have been loaded
               if (movies.length === 0) return <div className="main-view" />;
-              return movies.map((m) => (
-                <Col md={3} key={m._id}>
-                  <MovieCard
-                    movie={m}
-                    FavoriteMovies={FavoriteMovies}
-                    AddToFav={(movie, FavoriteMovies) =>
-                      this.AddToFav(movie, FavoriteMovies)
-                    }
-                    RemoveFromFav={(movie, FavoriteMovies) =>
-                      this.RemoveFromFav(movie, FavoriteMovies)
-                    }
-                  />
-                </Col>
-              ));
+              return (
+                <MovieList
+                  movies={movies}
+                  FavoriteMovies={FavoriteMovies}
+                  AddToFav={(movie, FavoriteMovies) =>
+                    this.AddToFav(movie, FavoriteMovies)
+                  }
+                  RemoveFromFav={(movie, FavoriteMovies) =>
+                    this.RemoveFromFav(movie, FavoriteMovies)
+                  }
+                />
+              );
             }}
           />
           <Route
@@ -324,7 +327,13 @@ export class MainView extends React.Component {
   }
 }
 
-MovieCard.propType = {
+let mapStateToProps = (globalState) => {
+  return { movies: globalState.movies };
+};
+
+export default connect(mapStateToProps, { setMovies })(MainView);
+
+MovieList.propType = {
   movie: PropType.shape({
     Title: PropType.string.isRequired,
     ImagePath: PropType.string.isRequired,

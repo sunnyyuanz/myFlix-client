@@ -11,6 +11,8 @@ import {
   Row,
 } from 'react-bootstrap';
 
+import './profile-view.scss';
+
 export class FavoriteCard extends React.Component {
   render() {
     const { movie } = this.props;
@@ -19,9 +21,9 @@ export class FavoriteCard extends React.Component {
 
     return (
       <Link to={`/movies/${movie._id}`}>
-        <Card key={movie._id}>
+        <Card key={movie._id} className="FavMovie-Card">
           <Card.Img src={url} />
-          <Card.Title>{movie.Title}</Card.Title>
+          <Card.Title className="FavMovie-CardTitle">{movie.Title}</Card.Title>
         </Card>
       </Link>
     );
