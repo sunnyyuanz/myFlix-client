@@ -11,7 +11,6 @@ import {
   Row,
 } from 'react-bootstrap';
 import axios from 'axios';
-import { UpdateView } from './updateView';
 
 export function UpdateView({ userInfo, onBackClick }) {
   //   console.log('This is UpdateView');
