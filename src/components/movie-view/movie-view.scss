@@ -2,8 +2,11 @@
     width: 40% !important;
 }
 
-.movie-view{
-    flex-direction: row !important;
+
+@media all and (min-width: 900px) {
+    .movie-view{
+        flex-direction: row !important;
+    }
 }
 
 .cardContent{

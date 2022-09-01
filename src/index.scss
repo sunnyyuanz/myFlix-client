@@ -16,10 +16,6 @@ div.container {
     background-color: #343a40;
 }
 
-.director-view img{
-    width: 20% !important;
-}
-
 .wordCountLimited{
     overflow: hidden;
     text-overflow: ellipsis;
@@ -41,5 +37,8 @@ div.container {
 @media all and (min-width: 900px) {
     .movieCard{
         min-height: 650px;
+    }
+    .director-view img{
+        width: 20% !important;
     }
 }
