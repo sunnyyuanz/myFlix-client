@@ -14,8 +14,8 @@ export class MovieCard extends React.Component {
     let url = 'images/' + movie.ImagePath;
 
     return (
-      <Link to={`/movies/${movie._id}`}>
-        <Card className="movieCard">
+      <Card className="movieCard">
+        <Link to={`/movies/${movie._id}`}>
           <Card.Img variant="top" src={url} className="movies-img" />
           <Card.Body className="movieCard-content">
             <Card.Title className="moviecard-title">{movie.Title}</Card.Title>
@@ -23,7 +23,7 @@ export class MovieCard extends React.Component {
               {movie.Description}
             </Card.Text>
           </Card.Body>
-        </Card>
+        </Link>
         <Row className="m-2 buttons">
           {FavoriteMovies.includes(movie._id) ? (
             <Button onClick={() => RemoveFromFav(movie, FavoriteMovies)}>
@@ -33,7 +33,7 @@ export class MovieCard extends React.Component {
             <Button onClick={() => AddToFav(movie, FavoriteMovies)}>♥</Button>
           )}
         </Row>
-      </Link>
+      </Card>
     );
   }
 }
