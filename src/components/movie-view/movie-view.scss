@@ -1,11 +1,9 @@
-.movieView-img{
-    width: 40% !important;
-}
-
-
 @media all and (min-width: 900px) {
     .movie-view{
         flex-direction: row !important;
+    }
+    .movieView-img{
+        width: 40% !important;
     }
 }
 
