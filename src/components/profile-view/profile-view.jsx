@@ -22,6 +22,8 @@ export class ProfileView extends React.Component {
 
     // const FavMoviesList = userInfo.FavoriteMovies;
 
+    let Birthday = userInfo.Birthday.split('T')[0];
+
     console.log(FavoriteMovies);
 
     const onUpdateClick = () => {
@@ -88,10 +90,7 @@ export class ProfileView extends React.Component {
 
                       <Form.Group>
                         <Form.Label>Birthday:</Form.Label>
-                        <Form.Control
-                          type="text"
-                          placeholder={userInfo.Birthday}
-                        />
+                        <Form.Control type="text" placeholder={Birthday} />
                       </Form.Group>
                     </fieldset>
                   </Form>

@@ -43,7 +43,9 @@ export function MenuBar(user) {
             ) : (
               <ul className="navbar">
                 <Nav.Link href="/">Sign In</Nav.Link>
-                <Nav.Link href="/register">Sign Up</Nav.Link>
+                <Nav.Link href="#register">
+                  <Link to={'/register'}>Sign Up</Link>
+                </Nav.Link>
               </ul>
             )}
           </Nav>

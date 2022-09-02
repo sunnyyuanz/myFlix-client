@@ -1,0 +1,189 @@
+.moviecard-title {
+  color: #ffffffbf !important;
+}
+
+.movieCard-content {
+  padding: 20px 10px 0 !important;
+}
+
+.wordCountLimited {
+  color: #c9c9c9bf !important;
+}
+
+.buttons {
+  justify-content: flex-end;
+}
+
+.movieCard {
+  border: 1px solid #8f8f8fbf !important;
+}
+
+.movieCard:hover {
+  transform: scale(1.05);
+  background-color: #343a40 !important;
+}
+
+.movies-img {
+  align-self: center;
+  width: 88% !important;
+}
+
+.forCenterImg {
+  display: contents;
+}
+
+
+
+@media (min-width: 900px) {
+  .movie-view {
+    flex-direction: row !important;
+  }
+
+  .movieView-img {
+    width: 40% !important;
+  }
+}
+
+.cardContent {
+  height: 80%;
+}
+
+.movieView-buttons {
+  justify-content: flex-end;
+}
+
+.btn {
+  margin: 5px;
+}
+
+span {
+  font-weight: 500;
+}
+
+.card-body {
+  padding: 3.25rem;
+}
+
+.nav-link a {
+  color: #ffffffbf !important;
+}
+
+.main-nav {
+  background-color: #000 !important;
+}
+
+.navbar-brand {
+  background-color: #fcba03;
+  border-radius: 5px;
+  align-self: center;
+  margin-bottom: .3rem;
+  font-weight: 800;
+  color: #000 !important;
+  padding: .5rem !important;
+}
+
+.favMovie {
+  color: #ffffffbf !important;
+}
+
+@media (min-width: 900px) {
+  .deregister {
+    width: 10% !important;
+  }
+}
+
+.deregister {
+  width: 50%;
+  align-self: end;
+  background-color: #c4c0c0 !important;
+  border-color: #0000 !important;
+}
+
+.FavMovie-Card {
+  background-color: #0000 !important;
+  border: 1px solid #8f8f8fbf !important;
+}
+
+.FavMovie-CardTitle {
+  color: #ffffffbf !important;
+}
+
+.FavMovie-Card:hover {
+  transform: scale(1.05);
+  background-color: #343a40 !important;
+}
+
+.auth {
+  color: #ffffffbf !important;
+}
+
+.searchbar-Section {
+  justify-content: center;
+  margin-top: 10px !important;
+}
+
+.searchbar {
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+
+.Main-Content {
+  margin-top: 0 !important;
+}
+
+@media (min-width: 900px) {
+  .searchbar-Section {
+    justify-content: flex-end;
+    margin-right: 60px !important;
+  }
+
+  .searchbar {
+    margin-bottom: 20px;
+    margin-left: 65px;
+  }
+}
+
+html, body {
+  height: 100%;
+  background-color: #343a40 !important;
+}
+
+.my-flix {
+  color: #4682b4;
+}
+
+div.container {
+  max-width: 100%;
+  background-color: #343a40;
+  padding: 0;
+}
+
+.wordCountLimited {
+  text-overflow: ellipsis;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.movieCard {
+  margin-bottom: 20px;
+  background-color: #0000 !important;
+}
+
+.auth {
+  color: #fff;
+}
+
+@media (min-width: 900px) {
+  .movieCard {
+    min-height: 650px;
+  }
+
+  .director-view img {
+    width: 20% !important;
+  }
+}
+
+/*# sourceMappingURL=index.e3f97e84.css.map */
