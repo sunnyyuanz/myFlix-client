@@ -35,7 +35,7 @@ class MainView extends React.Component {
   }
 
   componentDidMount() {
-    let accessToken = localStorage.getItem('token');
+    let accessToken = localStorage.getItem('token'); //After user login, need to store their token and user, in order to continue visit the page.
     if (accessToken !== null) {
       this.setState({
         user: localStorage.getItem('user'),
@@ -94,7 +94,7 @@ class MainView extends React.Component {
         .delete(
           `https://szmyflix.herokuapp.com/users/${user}/collections/${movie._id}`,
           {
-            headers: { Authorization: `Bearer ${token}` },
+            headers: { Authorization: `Bearer ${token}` }, //because of API is using JWT AUthentication, all HTTP requests need to have a valid token in order to get access to the API
           }
         )
         .then((response) => {
@@ -336,6 +336,7 @@ let mapStateToProps = (globalState) => {
   return { movies: globalState.movies };
 };
 
+//connect is not actually connect mapStateToProps to setMoview, its connect mapStatetoProps and setMovies to MainView. The first param of connect can only be mapStateToProps, if there isnt, put null. If you dont connect, then these thing will not be able to use in MainView.
 export default connect(mapStateToProps, { setMovies })(MainView);
 
 MovieList.propType = {

@@ -3,7 +3,6 @@ import Col from 'react-bootstrap/Col';
 import { connect } from 'react-redux';
 
 import { MovieCard } from '../movie-card/movie-card';
-import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input.jsx/visibility-filter-input';
 
 const mapStateToProps = (globalState) => {
   const { visibilityFilter } = globalState;

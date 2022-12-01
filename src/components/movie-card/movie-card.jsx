@@ -37,7 +37,7 @@ export class MovieCard extends React.Component {
     );
   }
 }
-
+//As props transmit data between components in a React application, propTypes validate the data types based on the app’s configuration.
 MovieCard.propTypes = {
   movie: PropTypes.shape({
     Title: PropTypes.string.isRequired,

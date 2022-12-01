@@ -18,11 +18,13 @@ import './profile-view.scss';
 export class ProfileView extends React.Component {
   render() {
     const { movies, onBackClick, userInfo, FavoriteMovies } = this.props;
+    let Birthday;
     console.log(movies, userInfo);
 
     // const FavMoviesList = userInfo.FavoriteMovies;
-
-    let Birthday = userInfo.Birthday.split('T')[0];
+    if (userInfo.Birthday) {
+      Birthday = userInfo.Birthday.split('T')[0];
+    }
 
     console.log(FavoriteMovies);
 
@@ -90,7 +92,10 @@ export class ProfileView extends React.Component {
 
                       <Form.Group>
                         <Form.Label>Birthday:</Form.Label>
-                        <Form.Control type="text" placeholder={Birthday} />
+                        <Form.Control
+                          type="text"
+                          placeholder={Birthday ? Birthday : 'Birthday'}
+                        />
                       </Form.Group>
                     </fieldset>
                   </Form>
